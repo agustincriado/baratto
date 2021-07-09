@@ -1,0 +1,8 @@
+<?php 
+
+$connection = mysqli_connect("127.0.0.1", "root", "", "Baratto");
+
+$dblog = $connection ? "Connection succesfull" : "Failed to log in";
+
+
+?>

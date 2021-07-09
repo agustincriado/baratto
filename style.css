@@ -1,0 +1,28 @@
+* {
+    margin: 0;
+    padding: 0
+}
+form {
+    display: none;
+}
+
+[id*="div_"] {
+    display: none;
+}
+#root {
+    display: flex;
+    justify-content: space-around;
+}
+
+.show {
+    display:block;
+}
+
+.hidden {
+    display: none;
+}
+
+.buttons {
+    display: flex;
+    justify-content: space-around;
+}
