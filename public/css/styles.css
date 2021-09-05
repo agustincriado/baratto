@@ -1,0 +1,42 @@
+.container {
+    display: grid;
+    grid-gap: 20px; 
+    grid-template-columns: repeat(4, 1fr);
+}
+
+#buttons, #root, #database {
+    grid-column-start: 1;
+    grid-column-end: 4;
+    grid-row-start: auto;
+}
+
+#buttons, #root, #database{
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+    -webkit-flex-wrap: wrap;
+}
+
+#aside {
+    grid-column-start: 4;
+    grid-column-end: 5;
+    grid-row-start: 1;
+    grid-row-end: 100;
+}
+
+#database>div {
+    display: none;
+}
+
+#aside > div {
+    display: none;
+}
+
+.selected {
+    background-color: #2fa360;
+    border-color: #2fa360;
+}
+
+.show {
+    display: block !important;
+}
