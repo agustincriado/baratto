@@ -43,7 +43,7 @@ class EmpleadoController extends Controller
             'Apellido'=>'required|string|max:100',
             'Direccion'=>'required|string|max:100',
             'Correo'=>'required|email',
-            'Foto'=>'required|max:10000|mimes:jpeg,jpg,png',
+            'Foto'=>'max:10000|mimes:jpeg,jpg,png',
         ];
 
         $mensaje = [
@@ -56,7 +56,7 @@ class EmpleadoController extends Controller
         $datosEmpleado = request()->except('_token');
         if($request->hasFile('Foto')) {
             $datosEmpleado['Foto'] = $request->file('Foto')->store('uploads', 'public'); 
-        }
+        } else $datosEmpleado['Foto'] = '';
 
         Empleado::insert($datosEmpleado);
 

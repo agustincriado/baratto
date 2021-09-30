@@ -40,7 +40,7 @@ class InventarioController extends Controller
         $datosInventario = $request->except('_token');
         if($request->hasFile('Foto')) {
             $datosInventario['Foto'] = $request->file('Foto')->store('uploads', 'public'); 
-        }
+        } else $datosInventario['Foto'] = '';
         Inventario::insert($datosInventario);
         return redirect('inventario')->with('mensaje', 'Articulo agregado');
     }

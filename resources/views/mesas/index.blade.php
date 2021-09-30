@@ -18,10 +18,11 @@
 </div>
 <div id="aside">
     <h1 id="carrito">Carrito</h1>
+    <button></button>
 </div>
 <div id="root">
     @for( $i = 1; $i < 4; $i++) 
-        <h3 id="mesa_{{$i}}" onclick="showInv(id);">Mesa {{$i}}</h3>
+        <h3  id="mesa_{{$i}}" onclick="showInv(id);">Mesa {{$i}}</h3>
     @endfor
 </div>
 <div id="database">

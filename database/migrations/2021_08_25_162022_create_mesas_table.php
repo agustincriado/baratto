@@ -14,7 +14,10 @@ class CreateMesasTable extends Migration
     public function up()
     {
         Schema::create('mesas', function (Blueprint $table) {
-            $table->id();
+
+            $table->date('Fecha');
+            $table->integer('Mesa');
+            $table->float('Consumo', 4, 2);
             $table->timestamps();
         });
     }

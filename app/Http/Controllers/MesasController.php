@@ -37,7 +37,8 @@ class MesasController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $datos = $request->except('_token');
+        Mesas::insert($datos);
     }
 
     /**
@@ -48,7 +49,7 @@ class MesasController extends Controller
      */
     public function show(Mesas $mesas)
     {
-        //
+        return view('empleado.create');
     }
 
     /**

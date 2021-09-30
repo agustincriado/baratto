@@ -24,7 +24,9 @@ const showInv = (idMesa) => {
     clearToggle();
     clearInv();
     const element = document.getElementById(idMesa);
-    element.classList.toggle('selected');
+    //element.classList.toggle('selected');
+    element.classList.toggle('text-warning');
+    element.classList.toggle('bg-dark');
     const database = document.getElementById('database');
     for ( i = 0; i < database.children.length; i++) {
         const dato = database.children[i];
@@ -47,7 +49,9 @@ const clearInv = () => {
 const clearToggle = () => {
     const root = document.getElementById('root');
     for (i = 0; i< root.children.length; i++) {
-    root.children[i].classList.remove('selected');
+    //root.children[i].classList.remove('selected');
+    root.children[i].classList.remove('text-warning');
+    root.children[i].classList.remove('bg-dark');
     }
 }
 

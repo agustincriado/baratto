@@ -2,7 +2,6 @@
 
 use Illuminate\Contracts\Http\Kernel;
 use Illuminate\Http\Request;
-require ('vendor/autoload.php');
 
 define('LARAVEL_START', microtime(true));
 
