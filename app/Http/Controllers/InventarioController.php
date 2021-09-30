@@ -39,8 +39,8 @@ class InventarioController extends Controller
     {
         $campos = [
             'Nombre'=>'required|string|max:100',
-            'Pcompra'=>'required|float|max:100',
-            'Pventa'=>'required|float|max:100',
+            'Pcompra'=>'required|ratio|max:100',
+            'Pventa'=>'required|ratio|max:100',
             'Cantidad'=>'required|integer',
             'Foto'=>'max:10000|mimes:jpeg,jpg,png',
         ];
