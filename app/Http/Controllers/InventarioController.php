@@ -37,6 +37,20 @@ class InventarioController extends Controller
      */
     public function store(Request $request)
     {
+        $campos = [
+            'Nombre'=>'required|string|max:100',
+            'Pcompra'=>'required|float|max:100',
+            'Pventa'=>'required|float|max:100',
+            'Cantidad'=>'required|integer',
+            'Foto'=>'max:10000|mimes:jpeg,jpg,png',
+        ];
+
+        $mensaje = [
+            'required' => 'El :attribute es requerido'
+        ];
+
+        $this->validate($request,$campos,$mensaje);
+
         $datosInventario = $request->except('_token');
         if($request->hasFile('Foto')) {
             $datosInventario['Foto'] = $request->file('Foto')->store('uploads', 'public'); 
