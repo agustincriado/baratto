@@ -15,10 +15,10 @@ class CreateMesasTable extends Migration
     {
         Schema::create('mesas', function (Blueprint $table) {
 
-            $table->date('Fecha');
+            $table->timestamp('Fecha')->nullable()->default(\DB::raw('CURRENT_TIMESTAMP'));
             $table->integer('Mesa');
             $table->float('Consumo', 4, 2);
-            $table->timestamps();
+
         });
     }
 

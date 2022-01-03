@@ -46,7 +46,7 @@ class InventarioController extends Controller
         ];
 
         $mensaje = [
-            'required' => 'El :attribute es requerido'
+            'required' => 'El :Attribute es requerido'
         ];
 
         $this->validate($request,$campos,$mensaje);
@@ -55,6 +55,7 @@ class InventarioController extends Controller
         if($request->hasFile('Foto')) {
             $datosInventario['Foto'] = $request->file('Foto')->store('uploads', 'public'); 
         } else $datosInventario['Foto'] = '';
+
         Inventario::insert($datosInventario);
         return redirect('inventario')->with('mensaje', 'Articulo agregado');
     }
@@ -96,12 +97,11 @@ class InventarioController extends Controller
         if($request->hasFile('Foto')) {
             $inventario = Inventario::findOrFail($id);
             Storage::delete('public/'. $inventario->Foto);
-            $$datosInventario['Foto'] = $request->file('Foto')->store('uploads', 'public'); 
+            $datosInventario['Foto'] = $request->file('Foto')->store('uploads', 'public'); 
         }
 
         Inventario::where('id', '=', $id)->update($datosInventario);
         $inventario = Inventario::findOrFail($id);
-        //return view('empleado.edit', compact('empleado'));
         return redirect('inventario')->with('mensaje', 'Articulo modificado');
     }
 

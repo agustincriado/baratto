@@ -47,7 +47,7 @@ class EmpleadoController extends Controller
         ];
 
         $mensaje = [
-            'required'=> 'El :attribute es requerido',
+            'required'=> 'El :Attribute es requerido',
             'Foto.required'=>'La foto es requerida'
         ];
 
@@ -106,7 +106,6 @@ class EmpleadoController extends Controller
 
         Empleado::where('id', '=', $id)->update($datosEmpleado);
         $empleado = Empleado::findOrFail($id);
-        //return view('empleado.edit', compact('empleado'));
         return redirect('empleado')->with('mensaje', 'Empleado modificado');
     }
 

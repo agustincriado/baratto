@@ -14,11 +14,15 @@
 <div id="buttons">
     <a href="{{ url('inventario/create') }}" class="btn btn-success">Registrar Articulo</a>
     <button class="btn btn-outline-primary" onclick="CreateTable()">Crear mesa</button>
-    <button class="btn btn-outline-secondary" onclick="hideInv()"> Hide</button>
+    <button class="btn btn-outline-secondary" onclick="hideInv();clearCart()"> Hide</button>
 </div>
 <div id="aside">
     <h1 id="carrito">Carrito</h1>
-    <button></button>
+    @for( $i = 1; $i < 4; $i++) 
+    <form id="formMesa_{{$i}}" action="{{ url('/mesas') }}" method="post" enctype="multipart/form-data">
+    @csrf
+    </form>
+    @endfor
 </div>
 <div id="root">
     @for( $i = 1; $i < 4; $i++) 
@@ -33,7 +37,6 @@
             <img src="{{ asset('storage') . '/' . $mesa->Foto }}" width="100" alt="" class="img-thumbnail img-fluid">
         </div>
     @endforeach
-
     <?php
     ?>
 </div>

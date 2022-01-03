@@ -39,6 +39,8 @@ class MesasController extends Controller
     {
         $datos = $request->except('_token');
         Mesas::insert($datos);
+
+        return redirect('mesas')->with('mensaje', 'Articulo agregado');
     }
 
     /**
@@ -49,7 +51,8 @@ class MesasController extends Controller
      */
     public function show(Mesas $mesas)
     {
-        return view('empleado.create');
+        $datos['mesas']= Inventario::paginate(5);
+        return view('mesas.index', $datos);
     }
 
     /**

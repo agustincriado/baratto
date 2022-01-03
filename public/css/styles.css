@@ -2,12 +2,12 @@
     display: grid;
     grid-gap: 20px; 
     grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(10, 1fr);
 }
 
 #buttons, #root, #database {
     grid-column-start: 1;
     grid-column-end: 4;
-    grid-row-start: auto;
 }
 
 #buttons, #root, #database{
@@ -17,18 +17,32 @@
     -webkit-flex-wrap: wrap;
 }
 
+#database {
+    grid-row-start: 3;
+    grid-row-end: -1;
+}
+
 #aside {
     grid-column-start: 4;
     grid-column-end: 5;
     grid-row-start: 1;
-    grid-row-end: 100;
+    grid-row-end: -1;
+    display: flex;
+    flex-flow: column wrap;
 }
-
+#aside > button {
+    display: none;
+}
 #database>div {
     display: none;
 }
 
-#aside > div {
+#formMesa > input {
+    display: none;
+    border: none;
+}
+
+#formMesa > label{
     display: none;
 }
 
