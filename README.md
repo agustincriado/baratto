@@ -1,8 +1,11 @@
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
 ## Getting Started
+First, run the command ``npm install`` to add every required dependencie to work
+Firebase configuration is set on firebase.js file and exporting "app" and "db" for every component who needs it
+Aswell it wil run on localhost while it in development until deploy on production 
 
-First, run the development server:
+Second, run the development server:
 
 ```bash
 npm run dev
