@@ -1,0 +1,37 @@
+.navBar {
+  padding: 24px;
+  background-color: var(--white-color);
+  box-shadow: 0px -10px 24px #000;
+}
+.navbarUl {
+  display: flex;
+  flex-flow: row nowrap;
+  align-items: center;
+  gap: 10px;
+  justify-content: flex-end;
+}
+.navbarUl a {
+  display: flex;
+  align-items: center;
+  padding: 0 16px;
+  height: 32px;
+}
+
+.shoppingCart {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.shoppingCart svg {
+  transform: scale(0.6167);
+}
+
+@media (prefers-color-scheme: dark) {
+  .shoppingCart {
+    fill: #fff;
+  }
+  .navBar {
+    background-color: var(--black-color);
+  }
+}
